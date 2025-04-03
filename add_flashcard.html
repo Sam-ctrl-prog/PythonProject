@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Flashcard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Add Flashcard</h1>
+        <form action="/add_flashcard" method="POST">
+            <label for="topic">Topic:</label>
+            <input type="text" id="topic" name="topic" required>
+            <label for="question">Question:</label>
+            <input type="text" id="question" name="question" required>
+            <label for="answer">Answer:</label>
+            <input type="text" id="answer" name="answer" required>
+            <button type="submit">Add Flashcard</button>
+        </form>
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>

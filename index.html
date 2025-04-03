@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Flashcard App</h1>
+        <a href="/add_flashcard">Add Flashcard</a>
+        <a href="/test_flashcards">Start Testing</a>
+        <a href="/result_flashcard">View Results</a>
+
+        <h2>Flashcards:</h2>
+        <ul id="flashcard-list"></ul>
+    </div>
+
+    <script>
+        fetch('/flashcards.json')
+            .then(response => response.json())
+            .then(data => {
+                const flashcards = data.flashcards;
+                const list = document.getElementById('flashcard-list');
+                flashcards.forEach(card => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${card.topic}: ${card.question}`;
+                    list.appendChild(listItem);
+                });
+            });
+    </script>
+</body>
+</html>
